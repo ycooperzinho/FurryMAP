@@ -26,20 +26,83 @@ Lembrando sou iniciante entao o codigo e todo aberto para que voces possam modif
 
 ## Instalação
 
-Clone o projeto:
+# Instalação do FurMap 🐾
+
+## Requisitos
+
+* Ubuntu 22.04+ (recomendado)
+* Acesso root
+* Domínio (opcional)
+* Nginx
+* Node.js 20+
+* Git
+
+---
+
+## Instalar Node.js 20
+
+```bash
+curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
+apt install -y nodejs
+```
+
+Verifique:
+
+```bash
+node -v
+npm -v
+```
+
+---
+
+## Instalar Nginx
+
+```bash
+apt update
+apt install -y nginx
+```
+
+Verifique:
+
+```bash
+systemctl status nginx
+```
+
+---
+
+## Instalar PM2
+
+```bash
+npm install -g pm2
+```
+
+Verifique:
+
+```bash
+pm2 -v
+```
+
+---
+
+## Baixar o FurMap
 
 ```bash
 git clone https://github.com/ycooperzinho/FurryMAP.git
 cd FurryMAP
 ```
 
-Instale as dependências:
+---
+
+## Executar o instalador
 
 ```bash
-npm install
+chmod +x install.sh
+./install.sh
 ```
 
-Inicie o servidor:
+---
+
+## Iniciar o FurMap
 
 ```bash
 node server.js
@@ -49,7 +112,66 @@ Ou utilizando PM2:
 
 ```bash
 pm2 start server.js --name furmap
+pm2 save
 ```
+
+---
+
+## Configurar Nginx
+
+Crie:
+
+```bash
+nano /etc/nginx/sites-available/furmap
+```
+
+Conteúdo:
+
+```nginx
+server {
+    listen 80;
+    server_name seusite.com www.seusite.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:3000;
+
+        proxy_http_version 1.1;
+
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    }
+}
+```
+
+Ative:
+
+```bash
+ln -s /etc/nginx/sites-available/furmap /etc/nginx/sites-enabled/
+nginx -t
+systemctl restart nginx
+```
+
+---
+
+## SSL (HTTPS)
+
+Instale:
+
+```bash
+apt install -y certbot python3-certbot-nginx
+```
+
+Execute:
+
+```bash
+certbot --nginx -d seusite.com -d www.seusite.com
+```
+
+---
 
 ## Atualização
 
@@ -59,25 +181,25 @@ npm install
 pm2 restart furmap
 ```
 
-## Banco de dados
+---
 
-O FurMap utiliza SQLite.
+## Recursos
 
-O banco será criado automaticamente na pasta:
+* Login e cadastro
+* Perfil de usuário
+* Upload de foto
+* Troca de senha
+* Painel administrativo
+* Mapa público
+* Cluster de marcadores
+* SQLite
 
-```text
-database/
-```
+---
 
-## Estrutura
+## Licença
 
-```text
-public/
-database/
-server/
-server.js
-package.json
-```
+MIT License
+
 
 ## Licença
 
