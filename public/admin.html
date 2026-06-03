@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Admin - FurMap</title>
+
+  <link rel="stylesheet" href="/css/style.css?v=36">
+</head>
+
+<body>
+
+<header class="topbar">
+  <a class="brand" href="/">
+    Fur<span>Map</span> Admin
+  </a>
+
+  <nav class="nav">
+    <a class="btn secondary" href="/dashboard.html">
+      Dashboard
+    </a>
+
+    <button id="logoutBtn" class="secondary" type="button">
+      Sair
+    </button>
+  </nav>
+</header>
+
+<main class="container">
+
+  <section class="card">
+
+    <h1>Painel Admin</h1>
+
+    <p class="muted">
+      Aqui você pode visualizar perfis, remover fotos,
+      apagar marcadores e deletar contas.
+    </p>
+
+    <p id="adminMsg" class="toast"></p>
+
+    <div id="users"></div>
+
+  </section>
+
+</main>
+
+<script src="/js/utils.js?v=36"></script>
+<script src="/js/admin.js?v=36"></script>
+
+</body>
+</html>

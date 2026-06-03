@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Dashboard - FurMap</title>
+
+  <link rel="stylesheet" href="/css/style.css?v=39">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
+</head>
+
+<body>
+  <header class="topbar">
+    <a class="brand" href="/">Fur<span>Map</span></a>
+
+    <nav class="nav">
+      <a class="btn secondary" href="/index.html">Mapa público</a>
+      <a class="btn secondary" href="/perfil.html" id="myProfileLink">Meu perfil</a>
+      <a class="btn secondary hidden" id="adminLink" href="/admin.html">Admin</a>
+      <button id="logoutBtn" class="secondary" type="button">Sair</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h1>Dashboard de <span id="hello">Furry</span> 🐾</h1>
+    <p id="dashMsg" class="toast"></p>
+
+    <div class="grid">
+      <section class="card">
+        <h2>Meu perfil</h2>
+
+        <div class="avatar-box">
+          <button id="profilePhotoLink" class="photo-link" type="button">
+            <img id="profilePhotoPreview" src="/img/default-avatar.svg" alt="Foto do perfil">
+          </button>
+
+          <form id="photoForm">
+            <label class="file-pill">
+              Escolher foto
+              <input type="file" id="photo" accept="image/*">
+            </label>
+
+            <div id="cropBox" class="crop-box hidden">
+              <div class="crop-preview-wrap">
+                <canvas id="cropCanvas" width="512" height="512"></canvas>
+              </div>
+
+              <label>Zoom</label>
+              <input type="range" id="cropZoom" min="1" max="3" step="0.01" value="1">
+
+              <label>Horizontal</label>
+              <input type="range" id="cropX" min="-200" max="200" step="1" value="0">
+
+              <label>Vertical</label>
+              <input type="range" id="cropY" min="-200" max="200" step="1" value="0">
+            </div>
+
+            <br>
+
+            <button type="submit">Enviar foto ajustada</button>
+
+            <p class="muted">Escolha a foto, ajuste o enquadramento e envie.</p>
+          </form>
+        </div>
+
+        <form id="profileForm">
+          <label>Nome exibido</label>
+          <input id="displayName">
+
+          <div class="form-row">
+            <div>
+              <label>Telegram</label>
+              <input id="telegram">
+            </div>
+
+            <div>
+              <label>Discord</label>
+              <input id="discord">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div>
+              <label>Cidade</label>
+              <input id="city">
+            </div>
+
+            <div>
+              <label>Telefone</label>
+              <input id="phone">
+            </div>
+          </div>
+
+          <label>Status</label>
+          <input id="status">
+
+          <label>Sobre mim</label>
+          <textarea id="about"></textarea>
+
+          <br><br>
+
+          <button type="submit">Salvar perfil</button>
+        </form>
+
+        <hr class="soft-line">
+
+        <div class="password-box">
+          <h2>Trocar senha</h2>
+          <p class="muted">Use essa área para alterar sua senha de login.</p>
+
+          <form id="passwordForm">
+            <label>Senha atual</label>
+            <input id="currentPassword" type="password" autocomplete="current-password">
+
+            <label>Nova senha</label>
+            <input id="newPassword" type="password" autocomplete="new-password">
+
+            <label>Confirmar nova senha</label>
+            <input id="confirmPassword" type="password" autocomplete="new-password">
+
+            <br><br>
+
+            <button type="submit">Trocar senha</button>
+          </form>
+        </div>
+      </section>
+
+      <section class="card map-card">
+        <div class="map-head">
+          <div>
+            <h2>Meu lugar no mapa</h2>
+            <p class="muted">Clique no mapa para escolher. Depois clique em salvar.</p>
+          </div>
+
+          <div class="nav">
+            <button id="saveMarkerBtn" type="button">Salvar lugar</button>
+            <button id="deleteMarkerBtn" class="danger" type="button">Apagar marcador</button>
+          </div>
+        </div>
+
+        <div id="map"></div>
+
+        <div class="map-warning">
+          <h3>🔒 Segurança no mapa</h3>
+
+          <p>
+            Para sua segurança, o seu marcador recebe uma pequena margem de erro.
+            Ele pode aparecer alguns metros ou até alguns quarteirões longe do ponto real.
+          </p>
+
+          <p>
+            Não compartilhe seu endereço, número da casa, documentos, telefone
+            ou qualquer informação pessoal em nenhum site público.
+          </p>
+        </div>
+      </section>
+    </div>
+
+    <footer class="site-footer">
+      <div>
+        <strong>Perdeu sua senha ou acesso?</strong>
+        <p>
+          Entre em contato com
+          <a href="https://t.me/yyCooper" target="_blank" rel="noopener noreferrer">@yyCooper</a>
+          no Telegram.
+        </p>
+      </div>
+
+      <div class="footer-buttons">
+        <a class="btn discord-btn" href="https://discord.gg/SEUCONVITE" target="_blank" rel="noopener noreferrer">
+          💬 Comunidade Discord
+        </a>
+
+        <a class="btn hosting-btn" href="https://loja.skycenterhosting.xyz" target="_blank" rel="noopener noreferrer">
+          🚀 SkyCenterHosting
+        </a>
+
+        <a class="btn pix-btn" href="PIX_AQUI" target="_blank" rel="noopener noreferrer">
+          ❤️ Apoiar Projeto PIX
+        </a>
+      </div>
+    </footer>
+  </main>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+
+<script src="/js/utils.js?v=39"></script>
+<script src="/js/dashboard.js?v=39"></script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <title>FurMap - Mapa Público</title>
+
+  <link rel="stylesheet" href="/css/style.css?v=40">
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
+</head>
+
+<body>
+
+<header class="topbar">
+  <a class="brand" href="/">
+    Fur<span>Map</span>
+  </a>
+
+  <nav class="nav">
+    <a class="btn secondary" href="/index.html">Mapa</a>
+    <a class="btn secondary" href="/login.html">Entrar</a>
+    <a class="btn" href="/dashboard.html">Adicionar meu lugar</a>
+  </nav>
+</header>
+
+<main class="container">
+
+  <section class="card public-map-head">
+    <h1>Mapa Público 🐾</h1>
+
+    <p class="muted">
+      Qualquer pessoa pode visualizar os marcadores e perfis públicos.
+      Você só precisa de uma conta para criar ou editar seu próprio marcador.
+    </p>
+
+    <p id="mapMsg" class="toast"></p>
+  </section>
+
+  <section class="card map-card public-map-card">
+
+    <div class="map-head">
+      <div>
+        <h2>Furries no mapa</h2>
+        <p class="muted">
+          Clique em um marcador para abrir o perfil.
+        </p>
+      </div>
+
+      <a class="btn" href="/dashboard.html">
+        Colocar meu marcador
+      </a>
+    </div>
+
+    <div id="map"></div>
+
+    <div class="map-warning">
+      <h3>🔒 Segurança</h3>
+
+      <p>
+        Para proteger os usuários, o FurMap aplica uma pequena margem
+        de erro nos marcadores.
+      </p>
+
+      <p>
+        O local mostrado pode aparecer alguns metros ou até alguns
+        quarteirões distante da posição real.
+      </p>
+
+      <p>
+        Nunca compartilhe endereço, documentos, telefone ou informações
+        pessoais em sites públicos.
+      </p>
+    </div>
+
+  </section>
+
+  <footer class="site-footer">
+
+    <div>
+      <strong>Perdeu sua senha ou acesso?</strong>
+
+      <p>
+        Entre em contato com
+        <a href="https://t.me/yyCooper" target="_blank">
+          @yyCooper
+        </a>
+        no Telegram.
+      </p>
+    </div>
+
+    <div class="footer-buttons">
+
+      <a
+        class="btn discord-btn"
+        href="https://discord.gg/SEUCONVITE"
+        target="_blank"
+      >
+        💬 Comunidade Discord
+      </a>
+
+      <a
+        class="btn hosting-btn"
+        href="https://loja.skycenterhosting.xyz"
+        target="_blank"
+      >
+        🚀 SkyCenterHosting
+      </a>
+
+      <a
+        class="btn pix-btn"
+        href="PIX_AQUI"
+        target="_blank"
+      >
+        ❤️ Apoiar Projeto PIX
+      </a>
+
+    </div>
+
+  </footer>
+
+</main>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+
+<script src="/js/utils.js?v=41"></script>
+<script src="/js/mapa.js?v=41"></script>
+
+</body>
+</html>

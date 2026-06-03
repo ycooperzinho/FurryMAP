@@ -1,0 +1,1 @@
+{"name":"furmap","version":"1.0.1","main":"server.js","scripts":{"start":"node server.js"},"dependencies":{"bcrypt":"latest","express":"latest","express-session":"latest","multer":"latest","sqlite3":"latest"}}
