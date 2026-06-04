@@ -1,29 +1,200 @@
-<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Entrar - FurMap</title><link rel="stylesheet" href="/css/style.css?v=30"></head><body>
-<header class="topbar"><a class="brand" href="/">Fur<span>Map</span></a><nav class="nav"><a class="btn secondary" href="/index.html">Ver mapa</a></nav></header>
-<main class="hero"><section class="card auth"><h1>Entrar no FurMap</h1><p class="muted">Use Gmail, usuário e senha para colocar seu lugar no mapa.</p><div class="auth-tabs"><button id="tabLogin" class="active" type="button">Entrar</button><button id="tabRegister" type="button">Criar conta</button></div><p id="msg" class="toast"></p>
-<form id="loginForm" class="auth-panel"><label>Gmail ou usuário</label><input id="login" autocomplete="username" required><label>Senha</label><input id="loginPassword" type="password" autocomplete="current-password" required><br><br><button type="submit">Entrar</button></form>
-<form id="registerForm" class="auth-panel hidden"><label>Gmail</label><input id="email" type="email" placeholder="seugmail@gmail.com" required><label>Usuário</label><input id="username" autocomplete="username" required><label>Senha</label><input id="password" type="password" autocomplete="new-password" required><br><br><button type="submit">Criar conta</button></form>
-</section><footer class="site-footer">
-  <div>
-    <strong>Perdeu sua senha ou acesso?</strong>
-    <p>
-      Entre em contato com
-      <a href="https://t.me/yyCooper" target="_blank" rel="noopener noreferrer">@yyCooper</a>
-      no Telegram.
-    </p>
-  </div>
+<!doctype html>
+<html lang="pt-BR">
 
-  <div class="footer-buttons">
-    <a class="btn discord-btn" href="https://discord.gg/SEUCONVITE" target="_blank" rel="noopener noreferrer">
-      💬 Comunidade Discord
-    </a>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
 
-    <a class="btn hosting-btn" href="https://loja.skycenterhosting.xyz" target="_blank" rel="noopener noreferrer">
-      🚀 SkyCenterHosting
-    </a>
+  <title>Entrar - FurMap</title>
 
-    <a class="btn pix-btn" href="PIX_AQUI" target="_blank" rel="noopener noreferrer">
-      ❤️ Apoiar Projeto PIX
-    </a>
-  </div>
-</footer></main><script src="/js/utils.js?v=30"></script><script src="/js/auth.js?v=30"></script></body></html>
+  <link rel="stylesheet" href="/css/style.css?v=40">
+  <link rel="icon" type="image/png" href="/img/fotologo.png">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
+  <link rel="stylesheet" href="/css/style.css?v=30">
+</head>
+
+<body>
+
+  <header class="topbar">
+    <a class="brand" href="/">Fur<span>Map</span></a>
+
+    <nav class="nav">
+      <a class="btn secondary" href="/index.html">
+        Ver mapa
+      </a>
+    </nav>
+
+  </header>
+
+  <main class="hero">
+
+    <section class="card auth">
+
+      <h1>
+        Entrar no FurMap
+      </h1>
+
+      <p class="muted">
+        Use Gmail, usuário e senha para colocar seu lugar no mapa.
+      </p>
+
+      <div class="auth-tabs">
+
+        <button
+          id="tabLogin"
+          class="active"
+          type="button">
+          Entrar
+        </button>
+
+        <button
+          id="tabRegister"
+          type="button">
+          Criar conta
+        </button>
+
+      </div>
+
+      <p id="msg" class="toast"></p>
+
+      <form id="loginForm" class="auth-panel">
+
+        <label>
+          Gmail ou usuário
+        </label>
+
+        <input
+          id="login"
+          autocomplete="username"
+          required
+        >
+
+        <label>
+          Senha
+        </label>
+
+        <input
+          id="loginPassword"
+          type="password"
+          autocomplete="current-password"
+          required
+        >
+
+        <br><br>
+
+        <button type="submit">
+          Entrar
+        </button>
+
+      </form>
+
+      <form id="registerForm" class="auth-panel hidden">
+
+        <label>
+          Gmail
+        </label>
+
+        <input
+          id="email"
+          type="email"
+          placeholder="seugmail@gmail.com"
+          required
+        >
+
+        <label>
+          Usuário
+        </label>
+
+        <input
+          id="username"
+          autocomplete="username"
+          required
+        >
+
+        <label>
+          Senha
+        </label>
+
+        <input
+          id="password"
+          type="password"
+          autocomplete="new-password"
+          required
+        >
+
+        <br><br>
+
+        <button type="submit">
+          Criar conta
+        </button>
+
+      </form>
+
+    </section>
+
+    <footer class="site-footer">
+
+      <div>
+
+        <strong>
+          Perdeu sua senha ou acesso?
+        </strong>
+
+        <p>
+          Entre em contato com
+          <a
+            href="https://t.me/yyCooper"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            @yyCooper
+          </a>
+          no Telegram.
+        </p>
+
+      </div>
+
+      <div class="footer-buttons">
+
+        <a
+          class="btn discord-btn"
+          href="https://discord.gg/SEUCONVITE"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          💬 Comunidade Discord
+        </a>
+
+        <a
+          class="btn hosting-btn"
+          href="https://loja.skycenterhosting.xyz"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          🚀 SkyCenterHosting
+        </a>
+
+        <a
+          class="btn pix-btn"
+          href="PIX_AQUI"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          ❤️ Apoiar Projeto PIX
+        </a>
+
+      </div>
+
+    </footer>
+
+  </main>
+
+  <script src="/js/utils.js?v=30"></script>
+  <script src="/js/auth.js?v=30"></script>
+
+</body>
+
+</html>

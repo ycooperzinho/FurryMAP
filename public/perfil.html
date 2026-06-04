@@ -1,64 +1,172 @@
 <!doctype html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
+
   <title>Perfil - FurMap</title>
+
+  <link rel="icon" type="image/png" href="/img/fotologo.png">
   <link rel="stylesheet" href="/css/style.css?v=35">
 </head>
 
 <body>
+
   <header class="topbar">
-    <a class="brand" href="/">Fur<span>Map</span></a>
+
+    <a class="brand" href="/">
+      Fur<span>Map</span>
+    </a>
 
     <nav class="nav">
-      <a class="btn secondary" href="/index.html">Mapa</a>
-      <a class="btn" href="/dashboard.html">Adicionar meu lugar</a>
+
+      <a
+        class="btn secondary"
+        href="/index.html">
+        Mapa
+      </a>
+
+      <a
+        class="btn"
+        href="/dashboard.html">
+        Adicionar meu lugar
+      </a>
+
     </nav>
+
   </header>
 
   <main class="container">
+
     <p id="profileMsg" class="toast"></p>
 
-    <section class="card profile-layout" id="profileBox">
+    <section
+      class="card profile-layout"
+      id="profileBox">
+
       <div>
-        <button id="photoLink" class="photo-profile-button" type="button">
-          <img id="profilePhoto" class="big-avatar" src="/img/default-avatar.svg" alt="Foto do perfil">
+
+        <button
+          id="photoLink"
+          class="photo-profile-button"
+          type="button">
+
+          <img
+            id="profilePhoto"
+            class="big-avatar"
+            src="/img/default-avatar.svg"
+            alt="Foto do perfil">
+
         </button>
+
       </div>
 
       <div>
-        <h1 id="displayName">Perfil</h1>
-        <p class="muted" id="username"></p>
+
+        <h1 id="displayName">
+          Perfil
+        </h1>
+
+        <p
+          class="muted"
+          id="username">
+        </p>
 
         <div class="info-list">
-          <div class="info-item"><b>Cidade:</b> <span id="city"></span></div>
-          <div class="info-item"><b>Status:</b> <span id="status"></span></div>
-          <div class="info-item"><b>Telegram:</b> <span id="telegram"></span></div>
-          <div class="info-item"><b>Discord:</b> <span id="discord"></span></div>
-          <div class="info-item"><b>Telefone:</b> <span id="phone"></span></div>
-          <div class="info-item"><b>Sobre:</b><br><span id="about"></span></div>
+
+          <div class="info-item">
+            <b>Cidade:</b>
+            <span id="city"></span>
+          </div>
+
+          <div class="info-item">
+            <b>Status:</b>
+            <span id="status"></span>
+          </div>
+
+          <div class="info-item">
+            <b>Telegram:</b>
+            <span id="telegram"></span>
+          </div>
+
+          <div class="info-item">
+            <b>Discord:</b>
+            <span id="discord"></span>
+          </div>
+
+          <div class="info-item">
+            <b>Telefone:</b>
+            <span id="phone"></span>
+          </div>
+
+          <div class="info-item">
+            <b>Sobre:</b>
+            <br>
+            <span id="about"></span>
+          </div>
+
         </div>
 
-        <div id="adminProfileActions" class="admin-profile-actions hidden">
-          <h3>Administração</h3>
-          <p class="muted">Ações administrativas desta conta.</p>
+        <div
+          id="adminProfileActions"
+          class="admin-profile-actions hidden">
+
+          <h3>
+            Administração
+          </h3>
+
+          <p class="muted">
+            Ações administrativas desta conta.
+          </p>
 
           <div class="nav">
-            <button id="removePhotoBtn" class="secondary" type="button">Remover foto</button>
-            <button id="deleteAccountBtn" class="danger" type="button">Apagar conta</button>
+
+            <button
+              id="removePhotoBtn"
+              class="secondary"
+              type="button">
+              Remover foto
+            </button>
+
+            <button
+              id="deleteAccountBtn"
+              class="danger"
+              type="button">
+              Apagar conta
+            </button>
+
           </div>
+
         </div>
+
       </div>
+
     </section>
+
   </main>
 
-  <div id="photoViewer" class="photo-viewer hidden">
-    <button id="closePhotoViewer" class="photo-viewer-close" type="button">×</button>
-    <img id="photoViewerImg" src="/img/default-avatar.svg" alt="Foto ampliada">
+  <div
+    id="photoViewer"
+    class="photo-viewer hidden">
+
+    <button
+      id="closePhotoViewer"
+      class="photo-viewer-close"
+      type="button">
+      ×
+    </button>
+
+    <img
+      id="photoViewerImg"
+      src="/img/default-avatar.svg"
+      alt="Foto ampliada">
+
   </div>
 
   <script src="/js/utils.js?v=35"></script>
   <script src="/js/perfil.js?v=35"></script>
+
 </body>
+
 </html>
